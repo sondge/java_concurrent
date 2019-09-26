@@ -20,8 +20,9 @@ public class WrongWayCantStopThreadWithVolatile {
         System.out.println("消费者不需要更多数据了。");
 
         //一旦消费不需要更多数据了，我们应该让生产者也停下来，但是实际情况
-        producer.canceled = true;
-        System.out.println(producer.canceled);
+//        producer.canceled = true;
+//        System.out.println(producer.canceled);
+        producerThread.interrupt();
     }
 
 }
@@ -38,12 +39,12 @@ class Producer implements Runnable {
     public void run() {
         try {
             int num = 0;
-            while (num <= 100000 && !canceled) {
+            while (num <= 100000 && !Thread.currentThread().isInterrupted()) {
                 if (num % 1000 == 0) {
                     blockingQueue.put(num);
-                    num++;
-                    System.out.println("1000的倍数放到仓库中");
+                    System.out.println(num+"的倍数放到仓库中");
                 }
+                num++;
             }
         } catch (Exception e) {
             e.printStackTrace();
