@@ -1,8 +1,8 @@
 package club.sondge.synchronizedpackage;
 
 public class SynchronizedStaticMothodAndNormalMethod implements Runnable {
-    static SynchronizedClassStaticMethod synchronizedClassStaticMethod1 = new SynchronizedClassStaticMethod();
-    static SynchronizedClassStaticMethod synchronizedClassStaticMethod2 = new SynchronizedClassStaticMethod();
+    static SynchronizedStaticMothodAndNormalMethod synchronizedClassStaticMethod1 = new SynchronizedStaticMothodAndNormalMethod();
+    static SynchronizedStaticMothodAndNormalMethod synchronizedClassStaticMethod2 = new SynchronizedStaticMothodAndNormalMethod();
 
     @Override
     public void run() {
