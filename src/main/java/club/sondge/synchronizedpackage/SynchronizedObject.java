@@ -1,7 +1,7 @@
 package club.sondge.synchronizedpackage;
 
-public class SyncchronizedObject implements Runnable {
-    static SyncchronizedObject syncchronizedObject =  new SyncchronizedObject();
+public class SynchronizedObject implements Runnable {
+    static SynchronizedObject synchronizedObject =  new SynchronizedObject();
     @Override
     public void run() {
         synchronized (this) {
@@ -16,8 +16,8 @@ public class SyncchronizedObject implements Runnable {
     }
 
     public static void main(String[] args) {
-        Thread thread1 = new Thread(syncchronizedObject);
-        Thread thread2 = new Thread(syncchronizedObject);
+        Thread thread1 = new Thread(synchronizedObject);
+        Thread thread2 = new Thread(synchronizedObject);
 
         thread1.start();
         thread2.start();

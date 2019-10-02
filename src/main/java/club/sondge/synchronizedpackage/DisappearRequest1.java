@@ -6,8 +6,10 @@ public class DisappearRequest1 implements Runnable {
     private static int i = 0;
     @Override
     public void run(){
-        for (int j = 0; j < 100000; j++) {
-            i++;
+        synchronized (SynchronizedClassStaticMethod.class) {
+            for (int j = 0; j < 100000; j++) {
+                i++;
+            }
         }
     }
 
